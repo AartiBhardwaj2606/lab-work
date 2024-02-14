@@ -1,4 +1,4 @@
-//1
+//1TO CHECK IF THE STRINGS ARE EQUAL OR NOT WITHOUT USING PRE-DEFINED FUNCTION
 /*#include <stdio.h>
 #include <string.h>
 int main() {
@@ -32,7 +32,7 @@ int main() {
     return 0;
 }
 
-//2
+//2 TO CHECK IF THE STRING IS PALINDROME OR NOT WITHOUT USING FUNCTION 
 #include <stdio.h>
 int main() {
     char s1[40];
@@ -62,12 +62,14 @@ int main() {
     return 0;
 }
 
-//3
+//3 TO INPUT A 2-D MATRIX OF DIMENSION (m X n) AND PERFORM THE OPERATION:
+//R2=2*R2-R1+5*R3
 #include <stdio.h>
 int main() {
     int arr[6][6],i,j,m,n;
     printf("enter number of rows and columns");
     scanf("%d %d",&n,&m);
+    printf("enter elements");
     for (i=0;i< m;i++)
     {
         for (j=0;j<n;j++)
@@ -77,28 +79,29 @@ int main() {
     }
     for(j=0;j<n;j++)
     {
-        i=1;
-        arr[i][j]=2*arr[i][j]-arr[0][j]+5*arr[2][j];
+        arr[1][j]=2*arr[1][j]-arr[0][j]+5*arr[2][j];
     }
-    for (i=0;i< m;i++)
+    for (i=0;i<m;i++)
     {
         for (j=0;j<n;j++)
         {
-            printf("%d\t",&arr[i][j]);
+            printf("%d\t",arr[i][j]);
         }
         printf("\n");
+    }
         return 0;
 
-    }
+    
 }
  
-//4
+//4 TO FIND THE TRANSPOSE OF A 2-D MATRIX. 
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main() {
     int arr[6][6],i,j,m,n,temp;
     printf("enter number of rows and columns");
     scanf("%d %d",&n,&m);
+    printf("enter elements");
     for (i=0;i< m;i++)
     {
         for (j=0;j<n;j++)
@@ -123,7 +126,7 @@ int main() {
     {
         for (j=0;j<n;j++)
         {
-            printf("%d\t",&arr[i][j]);
+            printf("%d\t",arr[i][j]);
         }
         printf("\n");
     }
@@ -131,7 +134,7 @@ int main() {
 
     
 }
-//5
+//5 TO COUNT NUMBER OF WORDS IN A STRING WITHOUT USING LIB FUNCTIONS
 #include <stdio.h>
 #include <string.h>
 int main() {
@@ -149,8 +152,8 @@ int main() {
     }
     printf("number of words in given string are %d",res);
     return 0;
-}*/
-
+}
+//6 TO CALCULATE NUMBER OF WORDS CONTAINING 'n' DIGIT WORDS.   
 #include <stdio.h>
 #include <string.h>
 int main() {
@@ -176,5 +179,69 @@ int main() {
 
     }
     printf("number for words containing %d digits are %d",n,c);
+    return 0;
+}*/
+//7 TO INPUT 2-D ARRAY AND FING ITS MIRROR REVERSAL ACROSS PRINCIPLE DIAGONAL.
+/*#include <stdio.h>
+int main()
+{
+    int arr[6][6],i,j,m,n,temp,k,res;
+    printf("enter number of rows and columns");
+    scanf("%d %d",&n,&m);
+    printf("enter elements");
+    for (i=0;i< m;i++)
+    {
+        for (j=0;j<n;j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    if(m!=n)
+    printf("OPERATION CAN'T BE PERFORMED AS NOT A SQUARE MATRIX");
+    k=m-1;
+    res=m-1;
+    for (i=0;i< m;i++)
+    {
+        for (j=0;j<n;j++)
+        {
+            if(i+j<=m/2)
+            {
+                temp=arr[i][j];
+                arr[i][j]=arr[i+k][j+k];
+                arr[i+k][j+k]=temp;
+            }
+            k--;
+        }
+        res--;
+        k=res;
+    }
+    
+    for (i=0;i< m;i++)
+    {
+        for (j=0;j<n;j++)
+        {
+            printf("%d\t",arr[i][j]);
+        }
+        printf("\n");
+    }
+return 0;
+}*///8 APPEND ONE STRING AFTER THE OTHER
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[40],str2[40];
+    int i,len1,len2,j;
+    puts("INPUT STRING");
+    fgets(str1,40,stdin);
+    fgets(str2,40,stdin);
+    len1=strlen(str1);
+    len2=strlen(str2);
+    for(i=0,j=len1-1;i<len2;i++,j++)
+    {
+        str1[j]=str2[i];
+    }
+    str1[j]='\0';
+    puts(str1);
     return 0;
 }
