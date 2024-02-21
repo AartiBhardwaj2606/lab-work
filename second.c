@@ -111,7 +111,7 @@ int main() {
     }
     for(i=0;i<m;i++)
     {
-        for(j=0;j<n;j++)
+        for(j=0+i;j<n;j++)
         {
             if(i!=j)
             {
