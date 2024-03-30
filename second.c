@@ -245,3 +245,270 @@ int main()
     puts(str1);
     return 0;
 }
+1. Write a user define function in C to print all unique elements in an array. 
+#include<stdio.h>
+int main()
+{
+    int num,res,j,i,temp,arr[100];
+    printf("ENTER LIMIT OF MATRIX");
+    scanf("%d" ,&num);
+    printf("ENTER ELEMENTS OF MATRIX");
+    for(i=0;i<num;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("UNIQUE ELEMENTS FOUND IN THE ARRAY ARE :");
+    for(i=0;i<num;i++)
+    {
+        for(j=0;j<num;j++)
+        {
+            if(i==j)
+            {
+                continue;
+            }
+            if(arr[i]==arr[j])
+            {
+                break;
+            }
+        }
+        if(j==num)
+        {
+            printf("\t%d",arr[i]);
+        }
+        
+    }
+    return 0;
+    }
+
+
+
+
+  2. Write a program in C to separate odd and even integers into separate arrays.
+#include<stdio.h>
+int main()
+{
+    int num,res=0,i,temp=0,arr[100],even[100],odd[100];
+    printf("ENTER LIMIT OF ARRAY");
+    scanf("%d" ,&num);
+    printf("ENTER ELEMENTS OF MATRIX");
+    for(i=0;i<num;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<num;i++)
+    {
+        if(arr[i]%2==0)
+        {
+            even[res]=arr[i];
+            res++;
+        }
+        else
+        {
+            odd[temp]=arr[i];
+            temp++;
+        
+        }
+    }
+    printf("THE ODD ELEMENTS ARE:");
+    for(i=0;i<temp;i++)
+    {
+        printf("\t%d",odd[i]);
+    }
+    printf("\n");
+    printf("THE EVEN ELEMENTS ARE:");
+    for(i=0;i<res;i++)
+    {
+        printf("\t%d",even[i]);
+    }
+    return 0;
+}
+*/
+/*
+
+  7. Write a program to remove characters from a string except alphabets.
+  
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100];
+    int i=0,j;
+    printf("INPUT A STRING:");
+    fgets(str,100,stdin);
+    printf("ORINGINAL STRING IS: " );
+    puts(str);
+    while(str[i]!='\0')
+    {
+        if(str[i]>=65 && str[i]<=91 || str[i]>=97 && str[i]<= 122)
+        {
+            i++;
+            continue;
+        }
+        else
+        {
+            for(j=i;str[j]!='\0';j++)
+            {
+                str[j]=str[j+1];
+            }
+        }
+    }
+    printf("MODIFIED STRING IS: ");
+    puts(str);
+return 0;
+}
+/*
+
+  6. Write a user define function to find the highest frequency character in a string.
+  */
+#include<stdio.h>
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100],ch;
+    int i=0,j,max=0,count=0;
+    printf("INPUT A STRING:");
+    fgets(str,100,stdin);
+    printf("ORINGINAL STRING IS: " );
+    puts(str);
+    for(i=0;str[i]!='\0';i++)
+    {
+        count=0;
+        for(j=0;str[j]!='\0';j++)
+        {
+            if(str[i]==str[j])
+            {
+                count++;
+            }
+        }
+        if(max<count)
+        {
+            max=count;
+            ch=str[i];
+        }
+        
+    }
+    if(ch==' ')
+    {
+        printf("HIGHEST FREQUENCY CHARACTER APPEARS IN A STRING IS SPACE");
+    }
+    else
+    {
+        printf("HIGHEST FREQUENCY CHARACTER APPEARS IN A STRING IS %c",ch);
+    }
+    
+   return 0;
+}
+
+
+ Q3 Write a program in C to find the sum of the lower triangular elements of a matrix 
+#include<stdio.h>
+int main()
+{
+    int r,c,i,j,temp,arr[10][10],sum=0;
+    printf("ENTER LIMIT OF MATRIX");
+    scanf("%d %d",&r,&c);
+    printf("ENTER ELEMENTS OF MATRIX");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    printf("GIVEN MATRIX IS:");
+    printf("\n");
+     for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d\t",arr[i][j]);
+        }
+        printf("\n");
+    }
+    printf("THE ELEMENTS BEINGS SUMMED OF THE LOWER TRIANGULAR MATRIX ARE:");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            if(i>j)
+            {
+              printf("\t%d",arr[i][j]);
+              sum=sum+arr[i][j];
+            }
+            
+        }
+       
+    }
+    printf("\n");
+    printf("THE SUM OF THE LOWER TRIANGULAR MATRIX ELEMENTS ARE: %d",sum);
+    return 0;   
+}*/
+/*
+ 4. Write a program in C to find the max element of each row of a matrix 
+#include<stdio.h>
+int main()
+{
+    int r,c,i,j,max,arr[10][10];
+    printf("ENTER LIMIT OF MATRIX");
+    scanf("%d %d",&r,&c);
+    printf("ENTER ELEMENTS OF MATRIX");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    printf("GIVEN MATRIX IS:");
+    printf("\n");
+     for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d\t",arr[i][j]);
+        }
+        printf("\n");
+    }
+    printf("THE MAXIMUM ELEMENT OF EACH ROW OF MATRIX ARE:");
+    for(i=0;i<r;i++)
+    {
+        max=arr[i][0];
+        for(j=1;j<c;j++)
+        {
+            if(max<arr[i][j])
+            {
+              max=arr[i][j];
+            }
+            
+        }
+        printf("\t%d",max);
+    }
+    return 0;   
+}
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100];
+    int i=0,j;
+    printf("input a string:");
+    fgets(str,100,stdin);
+    printf("ORINGINAL STRING IS:" );
+    puts(str);
+    while(str[i]!='\0')
+    {
+        if(str[i]==' ')
+        {
+        printf("\n");
+        i++;
+        }
+        else
+        {
+            printf("%c",str[i]);
+            i++;
+        }
+    }
+return 0;
+
+}
