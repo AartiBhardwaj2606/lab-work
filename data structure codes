@@ -1,0 +1,36 @@
+/*ARRANGING ELEMENTS OF ARRAY SUCH THAT POSITIVE AND NEGATIVE ELEMETS ARE SEPARATED ON EITHER SIDES OF THE ARRAY WITHOUT ACTUALLY ALTERING THE ORDER
+,WITHOUT USING DUPLICATE ARRAY */ 
+#include <stdio.h>
+
+int main()
+{
+    int arr[50],i,j,num,res;
+    printf("ENTER TOTAL ELEMENTS");
+    scanf("%d",&num);
+    printf("ENTER ELEMENTS");
+    //INPUT ELEMENTS
+    for(i=0;i<num;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    //LOGIC
+    for(i=0;i<num;i++)
+    {
+        for(j=0;j<num-1;j++)
+        {
+            if(arr[j]>=0 && arr[j+1]<0)
+            {
+                res=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=res;
+            }
+        }
+    }
+    //FINAL ARRAY
+    printf("AFTER ARRANGING ELEMENTS");
+    for(i=0;i<num;i++)
+    {
+        printf("\t%d",arr[i]);
+    }
+    return 0;
+}
