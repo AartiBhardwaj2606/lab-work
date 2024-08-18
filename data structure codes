@@ -34,3 +34,43 @@ int main()
     }
     return 0;
 }
+
+
+
+/*TO FIND THE FREQUENCY OF ALL ELEMENTS IN AN ARRAY*/
+#include <stdio.h>
+#define MAX 20
+int main()
+{
+    int arr[MAX],freq[MAX],num,i,j;
+    printf("ENTER SIZE");
+    scanf("%d",&num);
+    printf("ENTER ELEMENTS");
+    //ARRAY INITILISATION
+    for(i=0;i<num;i++)
+    {
+        scanf("%d",&arr[i]);
+        freq[i]=1;
+    }
+    //LOGIC
+    for(i=0;i<num;i++)
+    {
+       for(j=i+1;j<num;j++)
+       {
+           if(arr[i]==arr[j] && freq[j]!=0)
+           {
+               freq[i]++;
+               freq[j]=0;
+           }
+       }
+    }
+    //OUTPUT
+    for(i=0;i<num;i++)
+    {
+        if(freq[i]!=0)
+        {
+            printf("FREQUENCY OF %d IS %d TIMES\n",arr[i],freq[i]);
+        }
+    }
+    return 0;
+}
